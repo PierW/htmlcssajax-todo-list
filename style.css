@@ -11,6 +11,12 @@ header{
   color: red;
   height: 80px;
   line-height: 80px;
+  text-transform: uppercase;
+}
+
+.gen-card{
+  margin: 20px 0;
+  text-align: center;
 }
 
 ul{

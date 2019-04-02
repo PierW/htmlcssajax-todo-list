@@ -64,8 +64,49 @@ function deleteCard() {
   });
 }
 
+function clearInput() {
+
+  $("input").val("");
+}
+
+function pressEnter(e) {
+
+  if (e.which == 13) {
+    newCard();
+  }
+}
+
+function newCard() {
+
+  var input = $("input").val();
+
+  $.ajax({
+    url: "http://157.230.17.132:3021/todos/",
+    method: "POST",
+    data: {text: input},
+    success: function(apiData, stato) {
+
+      if (stato == "success") {
+
+        getCard();
+      }
+    },
+    error: function(richiesta, stato, errori) {
+      alert("Errore di connessione");
+    }
+  });
+
+  clearInput(); //FINE: ELIMINO VALORE DELL'INPUT
+}
+
 function init() {
 
   getCard();
-  $(document).on("click", ".card > ul > span", deleteCard)
+  $(document).on("click", ".card > ul > span", deleteCard);
+
+  var input = $("input");
+      input.keyup(pressEnter);
+
+  var button = $("button");
+      button.click(newCard);
 }
