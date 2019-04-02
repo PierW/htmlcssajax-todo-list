@@ -1,0 +1,32 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+header{
+  text-align: center;
+  background-color: black;
+  color: red;
+  height: 80px;
+  line-height: 80px;
+}
+
+ul{
+  list-style: none;
+}
+
+main{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card{
+  height: 200px;
+  width: 200px;
+  background-color: #cecece;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
